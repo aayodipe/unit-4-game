@@ -22,6 +22,12 @@ body {
      
 
 }
+li{
+     font-weight: bold;
+     font-size:18px;
+     line-height: 40px;
+
+}
 
 
 
@@ -30,7 +36,7 @@ p {
 }
 
 img {
-     width: 150px;
+     width: 20%;
      height:150px;
      transition: all 1s;
      margin:10px;
@@ -39,4 +45,26 @@ img {
 img:hover {
      transform: scale(1.1);
 }
+header{
+     width:100%;
+     height:100px;
+     background-color: rgb(191, 243, 156);
+     color:brown;
+     text-align:center;
+     padding:20px;
 
+}
+section{
+     width:100%;
+     height:200px;
+
+}
+.scores{
+    
+     color:black; 
+     font-size:30px;
+     margin:10px;
+     float: left;
+     width: 20%;
+     display:inline-block;
+}
