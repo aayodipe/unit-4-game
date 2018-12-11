@@ -28,6 +28,9 @@ li{
      line-height: 40px;
 
 }
+h1{
+     font-size:30px
+}
 
 
 
@@ -52,6 +55,7 @@ header{
      color:brown;
      text-align:center;
      padding:20px;
+     
 
 }
 section{
@@ -76,7 +80,8 @@ section{
 }
 #randomNumber, #total-score, #win, #loss{
      font-size:30px;
-     margin-top:20px
+     margin-top:20px;
+     color:white;
 }
 /* break point at 500 or less view point */
 @media  screen and (max-width: 768px) {
