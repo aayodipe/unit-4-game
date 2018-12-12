@@ -4,91 +4,104 @@ const totalScores = document.querySelector("#total-score");
 const wins = document.querySelector("#win");
 const losses = document.querySelector("#loss");
 
-                //global variables
-//holds the randomNum
-let randomNum= 0;
-//holdds the totalscore
-let totalScore=0
-//holds the win
-let win=0;
-//holds the loss
-let loss=0;
+//global variables
+let randomNum, totalScore, win, loss, myArray,isStartplaying,star1, star2,star3,star4
+// set variable total, win and loss to zero
+win = 0;
+loss = 0
+totalScore= 0;
 
-//check if the game as started
-let startGame = false
-//updating the hmtl
-totalScores.textContent = totalScore;
-wins.textContent = win;
-losses.textContent = loss;
+myArray = []////Array to hold four different random number generated
 
-//generate 4 other random number
-let myArray = []
-for (var i = 0; i < 4 ; i++){
-   let numbers =Math.floor(Math.random()*15)+1;   
-   myArray.push(numbers);
-      console.log(myArray)
-}
-  
-// store the number in different variables
-let star1 = Number(myArray[0]);
-let star2 = Number(myArray[1]);
-let star3 = Number(myArray[2]);
-let star4 = Number(myArray[3]);
-
-//attached each of the image to each of the variable
-$("#star1").on("click",function(){
-     if(startGame===false){
-          totalScore +=star1
-          totalScores.textContent = totalScore;
-          console.log(star1)
-          console.log(totalScore)
-     }
-})
-
-$("#star2").on("click",function(){
-     if(startGame===false){
-          totalScore +=star2
-          totalScores.textContent = totalScore;
-          console.log(star2)
-          console.log(totalScore)
-     }
-})
-$("#star3").on("click",function(){
-     if(startGame===false){
-          totalScore +=star3
-          totalScores.textContent = totalScore;
-          console.log(star3)
-          console.log(totalScore)
-     }
-})
-$("#star4").on("click",function(){
-     if(startGame===false){
-          totalScore +=star4
-          totalScores.textContent = totalScore;
-          console.log(star4)
-          console.log(totalScore)
-     }
-})
-//click an image to append the score in the variable attached to it to the total score
-//if the total score is equal to the random number, the increment the win by 1 
-//if the total number is more than the random number decrement the loss
 function random(){
      // generate a general random number between 50-100
-     randomNum = Math.floor((Math.random()*20)+80)
-     randomNumbers.textContent = randomNum;
+     randomNum = Math.floor((Math.random()*30)+70)
+     $(randomNumbers).text(randomNum);
      console.log(randomNum)
-     }
+    
+} random()
+//This part generates the random numbers for the crystal
+//loop over the random number four time
+for (var i = 0; i < 4 ; i++){
+     // generate random number
+    let numbers =(Number(Math.floor(Math.random()*12)+1));  
+   // push random number to array  
+    myArray.push(numbers);
+   // test
+       console.log(myArray)
+ }
+ 
+ // store the number in different variables
+ 
+//attached each of the image to each of the variable
+ star1 = Number(myArray[0]);
+ star2 = Number(myArray[1]);
+ star3 = Number(myArray[2]);
+ star4 = Number(myArray[3]);
+ 
 
-function reset (){
-     randomNum= 0;
-     
-     totalScore=0
-     
-     win=0;
-     
-     loss=0;
-     randomNumbers.textContent = "";
-     totalScores.textContent = 0;
-     wins.textContent = 0;
-     losses.textContent = 0;
+//the image adds the random number to the total score
+function playGame(){
+  
+$("#star1").on("click",function(){    
+          totalScore +=star1
+          $(totalScores).text(totalScore);
+          console.log(star1)
+          compareScore()
+          
+  })
+
+$("#star2").on("click",function(){     
+          totalScore +=star2
+          $(totalScores).text(totalScore);
+          console.log(star2)
+          compareScore()
+         
+  })
+$("#star3").on("click",function(){   
+          totalScore +=star3
+          $(totalScores).text(totalScore);
+          console.log(star3)
+          compareScore()
+         
+  })
+$("#star4").on("click",function(){   
+          totalScore +=star4
+          $(totalScores).text(totalScore);
+          console.log(star4)
+          compareScore()
+        
+  })
+  compareScore()
+ }playGame()
+
+
+//if the total score is equal to the random number, the increment the win by 1 
+function compareScore(){
+    
+
+    
+    // compare random number and totalsccore
+     if(randomNum === totalScore){
+            win++// increment win
+       $(wins).text(win);// output winning score
+          console.log(win)
+          totalScore = 0
+          
      }
+     else if (randomNum < totalScore){
+          loss++//increment loss
+          $(losses).text(loss);// output lossing score
+          console.log(loss) 
+          totalScore = 0
+          
+     }
+}
+
+
+//if the total number is more than the random number decrement the loss
+
+     
+
+
+ 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="assets/css/reset.css"> -->
+     <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+     <title>Crystal Collector Game</title>
+</head>
+
+<body>
+     <header class="main-header">
+          <h1>Crystal Collector!</h1>
+     </header>
+     <section id="main-section">
+          <section class=" sub-section left">
+               <div class="scores ">Random Number
+                    <div id="randomNumber"></div>
+               </div>
+               <div class="scores ">Total Score
+                    <div id="total-score"></div>
+               </div>
+               <div class="scores ">Win
+                    <div id="win"></div>
+               </div>
+               <div class="scores ">Loss
+                    <div id="loss"></div>
+               </div>
+          </section>
+          <section class=" sub-section-img middle clear">
+               <img id= "star1" src="assets/images/star-1.jpg" alt="star image">
+               <img id= "star2"  src="assets/images/star-2.jpg" alt="star image">
+               <img  id= "star3"  src="assets/images/star-3.jpg" alt="star image">
+               <img  id= "star4" src="assets/images/star-4.jpg" alt="star image">
+          </section>
+          <section class=" sub-section right clear">
+               <ol>
+                    <li id="instruction">Click on one of the star images </li>
+                    <li id="instruction">Anyone you click will add a specific amount of points to  your total score</li>
+                    <li id="instruction">If your total score matches the random number from the beginning of the game,
+                         you win </li>
+                    <li id="instruction">if your total score do not matches the random number from the beginning of the
+                         game, you loss</li>
+
+               </ol>
+
+
+          </section>
+
+
+     </section>
+     <footer class="clear:">&copy;2018</footer>
+     <!-- Added link to the jQuery library -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- Added link to the custom script  -->
+     <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
